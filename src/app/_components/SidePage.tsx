@@ -43,19 +43,19 @@ export default function SidePage() {
 
       <section className="w-full p-2 space-y-2 flex-col items-center justify-center">
         <nav className="h-10 w-80 flex space-x-1.5 items-center justify-start">
-          <Link href="https://www.linkedin.com/in/renovatt/" target="_blank" className="bg-black rounded-full h-8 w-8 flex items-center justify-center">
+          <Link href="https://www.linkedin.com/in/renovatt/" target="_blank" className="bg-primary rounded-full h-8 w-8 flex items-center justify-center">
             <LinkedInLogoIcon className="h-4 w-4 text-secondary" />
           </Link>
 
-          <Link href="https://github.com/renovatt" target="_blank" className="bg-black rounded-full h-8 w-8 flex items-center justify-center">
+          <Link href="https://github.com/renovatt" target="_blank" className="bg-primary rounded-full h-8 w-8 flex items-center justify-center">
             <GitHubLogoIcon className="h-4 w-4 text-secondary" />
           </Link>
 
-          <Link href="https://renovatt.dev.br/home" target="_blank" className="bg-black rounded-full h-8 w-8 flex items-center justify-center">
+          <Link href="https://renovatt.dev.br/home" target="_blank" className="bg-primary rounded-full h-8 w-8 flex items-center justify-center">
             <GlobeIcon className="h-4 w-4 text-secondary" />
           </Link>
 
-          <Link href="mailto:wlymes@gmail.com" target="_blank" className="bg-black rounded-full h-8 w-8 flex items-center justify-center">
+          <Link href="mailto:wlymes@gmail.com" target="_blank" className="bg-primary rounded-full h-8 w-8 flex items-center justify-center">
             <EnvelopeClosedIcon className="h-4 w-4 text-secondary" />
           </Link>
         </nav>
