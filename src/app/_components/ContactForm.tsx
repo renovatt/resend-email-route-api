@@ -23,6 +23,7 @@ import {
   SelectContent,
   SelectItem
 } from "@/components/ui/select";
+import { handleSendEmailByRouteApi } from "../services/send-email"
 
 export function ContactForm() {
   const { toast } = useToast()
@@ -36,11 +37,20 @@ export function ContactForm() {
     }
   })
 
-  const handleSubmit = (data: FormSchemaType) => {
-    console.log(data)
-    toast({
-      title: "Seu e-mail foi enviado!",
-    })
+  const handleSubmit = async (data: FormSchemaType) => {
+    const response = await handleSendEmailByRouteApi(data)
+    if (response.status === "success") {
+      toast({
+        title: "E-mail enviado!",
+        description: "Sua mensagem foi enviada com sucesso.",
+      })
+      form.reset()
+    } else {
+      toast({
+        title: "Erro ao enviar e-mail!",
+        description: "Houve um erro ao enviar sua mensagem.",
+      })
+    }
   }
 
   return (
