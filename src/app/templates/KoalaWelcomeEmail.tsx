@@ -1,3 +1,4 @@
+import { FormSchemaType } from "@/schemas";
 import {
   Body,
   Button,
@@ -12,47 +13,40 @@ import {
 } from "@react-email/components";
 import * as React from "react";
 
-interface KoalaWelcomeEmailProps {
-  userFirstname: string;
-}
-
-const baseUrl = 'https://demo.react.email';
+const myLogo = 'https://raw.githubusercontent.com/renovatt/portfolio/main/public/icon-192x192.png';
 
 export const KoalaWelcomeEmail = ({
-  userFirstname,
-}: KoalaWelcomeEmailProps) => (
+  email, message, username, visitor
+}: FormSchemaType) => (
   <Html>
     <Head />
     <Preview>
-      The sales intelligence platform that helps you uncover qualified leads.
+      Página de contato renovatt.dev
     </Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`${baseUrl}/static/koala-logo.png`}
-          width="170"
+          src={myLogo}
+          width="50"
           height="50"
           alt="Koala"
           style={logo}
         />
-        <Text style={paragraph}>Hi {userFirstname},</Text>
+        <Text style={paragraph}>Olá, eu me chamo {username} e sou um {visitor}!</Text>
         <Text style={paragraph}>
-          Welcome to Koala, the sales intelligence platform that helps you
-          uncover qualified leads and close deals faster.
+          {message}
         </Text>
-        <Section style={btnContainer}>
-          <Button style={button} href="https://getkoala.com">
-            Get started
-          </Button>
-        </Section>
         <Text style={paragraph}>
-          Best,
+          Meu email é {email}, por favor entre em contato comigo.
+        </Text>
+        <Text style={paragraph}>
+          Att,
           <br />
-          The Koala team
+          {username}
         </Text>
         <Hr style={hr} />
         <Text style={footer}>
-          470 Noor Ave STE B #1148, South San Francisco, CA 94080
+          E-mail enviado pela página de contato renovatt.dev.br - Desenvolvedor Front-End, João Pessoa - PB
         </Text>
       </Container>
     </Body>
@@ -61,7 +55,11 @@ export const KoalaWelcomeEmail = ({
 
 KoalaWelcomeEmail.PreviewProps = {
   userFirstname: "Alan",
-} as KoalaWelcomeEmailProps;
+  email: "",
+  message: "",
+  username: "",
+  visitor: "cliente",
+} as FormSchemaType;
 
 export default KoalaWelcomeEmail;
 
