@@ -1,4 +1,4 @@
-import KoalaWelcomeEmail from "@/app/templates/KoalaWelcomeEmail";
+import KoalaWelcomeEmail from "@/templates/KoalaWelcomeEmail";
 import { FormSchemaType, formSchema } from "@/schemas";
 import { NextResponse } from "next/server";
 import { Resend } from "resend";

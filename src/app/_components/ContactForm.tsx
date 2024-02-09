@@ -23,7 +23,7 @@ import {
   SelectContent,
   SelectItem
 } from "@/components/ui/select";
-import { handleSendEmailByRouteApi } from "../services/send-email"
+import { handleSendEmailByRouteApi } from "../../services/send-email"
 
 export function ContactForm() {
   const { toast } = useToast()
